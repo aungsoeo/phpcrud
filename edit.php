@@ -1,36 +1,21 @@
 <?php
-// including the database connection file
-include "config/dbconnect.php";
+	// including the database connection file
+	include "config/dbconnect.php";
  
-//getting id from url
-$id = $_GET['id'];
+	//getting id from url
+	$id = $_GET['id'];
  
-//selecting data associated with this particular id
-$result = mysqli_query($conn, "SELECT * FROM students WHERE id=$id");
+	//selecting data associated with this particular id
+	$result = mysqli_query($conn, "SELECT * FROM students WHERE id=$id");
  
-while($res = mysqli_fetch_array($result))
-{	
-	$roll_no = $res['roll_no'];
-    $name = $res['name'];
-    $email = $res['email'];
-    $address = $res['address'];
-    $phone = $res['phone'];
-}
-
-
-// echo $roll_no;
-// echo "<br>";
-
-// echo $name;
-// echo "<br>";
-// echo $email;
-// echo "<br>";
-// echo $address;
-// echo "<br>";
-
-// echo $phone;
-// echo "<br>";
-
+	while($res = mysqli_fetch_array($result))
+	{	
+		$roll_no = $res['roll_no'];
+	    $name = $res['name'];
+	    $email = $res['email'];
+	    $address = $res['address'];
+	    $phone = $res['phone'];
+	}
 ?>
 
  <!DOCTYPE html>
@@ -62,9 +47,10 @@ while($res = mysqli_fetch_array($result))
 				  Phone:<br>
 				  <input type="text" name="phone" value="<?php echo $phone;?>">
 				  <br>
-				   <input type="hidden" name="id" value="<?php echo $id; ?>" >
+				  
+				  <input type="hidden" name="id" value="<?php echo $id; ?>" >
 
-				  <input type="submit" name="update" value="Submit">
+				  <input type="submit" name="update" value="Update">
 			</form> 
 
  		</div>
