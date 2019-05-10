@@ -11,7 +11,7 @@
  			<h1 id="banner_title">Linn Internship Program</h1>
  		</div>
  		<div class="form">
- 			<form action="query/store.php" method="post">
+ 			<form action="query/update.php" method="post">
 				  Roll No:<br>
 				  <input type="text" name="roll_no" value="">
 				  <br>
@@ -21,16 +21,19 @@
 				  Email:<br>
 				  <input type="email" name="email" value="">
 				  <br>
-				  Address:<br>
-				  <textarea name="address">
-				  	
-				  </textarea>
-				  <br><br>
 				  Phone:<br>
 				  <input type="text" name="phone" value="">
 				  <br>
+				  Address:<br>
+				  <textarea name="address">
+				  </textarea>
+				  
+				  	
+				  
+				  <br><br>
+				  
 
-				  <input type="submit" value="Submit">
+				  <input type="submit" value="Submit"name="submit">
 			</form> 
 
  		</div>

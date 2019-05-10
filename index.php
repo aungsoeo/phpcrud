@@ -3,10 +3,10 @@
 include "config/dbconnect.php";
  
 
-$result = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC"); // using mysqli_query instead
+$result = mysqli_query($conn, "SELECT * FROM stddb ORDER BY id DESC"); // using mysqli_query instead
 
 
-// var_dump($result);
+//var_dump($result);
 ?>
 
  <!DOCTYPE html>
@@ -35,7 +35,9 @@ $result = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC"); // usi
  						<th>Email</th>
  						<th>Phone</th>
  						<th>Address</th>
- 					</tr>
+						<th>Action</th>
+ 					
+					
  				</thead>
  				<tbody>
 
@@ -43,12 +45,12 @@ $result = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC"); // usi
        					 //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
 				        while($res = mysqli_fetch_array($result)) {         
 				            echo "<tr>";
-				            echo "<td>".$res['roll_no']."</td>";
+				            echo "<td>".$res['rollno']."</td>";
 				            echo "<td>".$res['name']."</td>";
 				            echo "<td>".$res['email']."</td>";
-				            echo "<td>".$res['address']."</td>";
-				            echo "<td>".$res['phone']."</td>";    
-				            // echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
+				            echo "<td>".$res['phone']."</td>";
+							echo "<td>".$res['address']."</td>"; 
+					        echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"query/delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
 				        }
 				        ?>
  				</tbody>
