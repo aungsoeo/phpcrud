@@ -15,4 +15,4 @@
         
         //display success message
         echo "<font color='green'>Data added successfully.";
-        echo "<br/><a href='index.php'>View Result</a>";
+       header("Location: http://localhost:8888/phpcrud/");

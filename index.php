@@ -1,12 +1,12 @@
 <?php
 //including the database connection file
 include "config/dbconnect.php";
- 
+
 
 $result = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC"); // using mysqli_query instead
 
-
-// var_dump($result);
+// $res = mysqli_fetch_array($result);
+// var_dump($res);
 ?>
 
  <!DOCTYPE html>
@@ -33,8 +33,9 @@ $result = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC"); // usi
  						<th>Roll No </th>
  						<th>Name</th>
  						<th>Email</th>
+ 						<th>Addrss</th>
  						<th>Phone</th>
- 						<th>Address</th>
+ 						<th>Action</th>
  					</tr>
  				</thead>
  				<tbody>
@@ -48,7 +49,8 @@ $result = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC"); // usi
 				            echo "<td>".$res['email']."</td>";
 				            echo "<td>".$res['address']."</td>";
 				            echo "<td>".$res['phone']."</td>";    
-				            // echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
+				            echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"query/delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>"; 
+				            echo "</tr>";       
 				        }
 				        ?>
  				</tbody>
